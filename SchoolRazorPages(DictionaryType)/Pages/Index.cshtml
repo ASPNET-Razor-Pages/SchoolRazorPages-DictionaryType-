@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<p style="color:aqua"> List of students</p>
+
+@foreach (var student in Model.DictStudent)
+{
+    <br />
+   
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@student.Value.ImagePath" alt="Student Name">
+            <div class="card-body">
+                <h5 class="card-title">@student.Value.Name</h5>
+                <p class="card-text">@student.Value.Id</p>
+                <a href="#" class="btn btn-primary">Add Me</a>
+            </div>
+        </div>
+    
+
+}
